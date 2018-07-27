@@ -18,7 +18,7 @@ keep_prob = tf.placeholder(tf.float32)
 # Conv1 Layer
 with slim.arg_scope([slim.conv2d],padding='VALID',
             #weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
-            weights_initializer=tf.contrib.layers.xavier_initializer(),
+            weights_initializer=tf.contrib.layers.xavier_initializer(),# this is default in slim.conv2d
             weights_regularizer=slim.l2_regularizer(0.005)):
     # C1: 1*32*32 -> 6*28*28
     # but mnist image is 28*28, so use padding=same instead
